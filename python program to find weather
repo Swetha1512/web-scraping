@@ -1,0 +1,13 @@
+import requests
+city=input("Enter the city Name to know Weather:")
+url="http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=a08fa7f9d07ef542733e9904d5ab80d8"
+data=requests.get(url)
+read=data.json()
+print ("City Name   : {}".format(read['name']))
+print ("Temperature : {}F".format(read['main']['temp']))
+print ("Humidity    : {}".format(read['main']['humidity']))
+print ("Pressure    : {}".format(read['main']['pressure']))
+print ("Wind Speed  : {}".format(read['wind']['speed']))
+print ("description : {}".format(read['weather'][0]['description']))
+
+
